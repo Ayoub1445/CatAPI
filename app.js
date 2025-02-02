@@ -80,11 +80,18 @@ app.delete('/api/cats/remove/:_id',async (req,res)=>{
 
 
 let jwt = require('jsonwebtoken');
-let fs = require('fs');
 
-let priveateKey = fs.readFileSync('private.key');
-let token = jwt.sign({name:'test'},priveateKey);
+let token = jwt.sign({name:'test'},'mySecreteKey');
 console.log(token);
+
+
+
+
+// let fs = require('fs');
+
+// let priveateKey = fs.readFileSync('private.key');
+// let token = jwt.sign({name:'test'},priveateKey);
+// console.log(token);
 
 
 
