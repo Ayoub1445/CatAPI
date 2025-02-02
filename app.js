@@ -79,8 +79,47 @@ app.delete('/api/cats/remove/:_id',async (req,res)=>{
 
 
 
+let jwt = require('jsonwebtoken');
+let fs = require('fs');
+
+let priveateKey = fs.readFileSync('private.key');
+let token = jwt.sign({name:'test'},priveateKey);
+console.log(token);
+
+
 
 app.listen(3000, () => console.log("Server is running on port 3000"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Get
